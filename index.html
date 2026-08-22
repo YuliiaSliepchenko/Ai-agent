@@ -283,32 +283,6 @@
       <div class="footer-glow"></div>
     </footer>
 
-    <script>
-      (function () {
-        const slides = document.querySelectorAll('.review-slide');
-        const dots = document.querySelectorAll('.dot');
-        const prev = document.querySelector('.review-nav.prev');
-        const next = document.querySelector('.review-nav.next');
-
-        if (!slides.length) return;
-
-        let index = 0;
-
-        function render() {
-          slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-          dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-        }
-
-        function move(step) {
-          index = (index + step + slides.length) % slides.length;
-          render();
-        }
-
-        prev.addEventListener('click', () => move(-1));
-        next.addEventListener('click', () => move(1));
-
-        setInterval(() => move(1), 6000);
-      })();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
